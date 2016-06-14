@@ -155,7 +155,7 @@ This commit backport ro.sf.hwrotation to Android 5.x
 </pre>
 
 
-But there is problem when new configuration changed and suspend, such as USB keyboard plugged.
+But there is problem when new configuration changed and suspend, such as USB keyboard plugged. Need add hwrotation check in ColorFade and ScreenRotationAnimation. Since hwrotation is not Android original configuration already, it's better to check any function referring to DisplayInfo::getDisplayInfo.
 
 <pre>
     // "frameworks/base/services/core/java/com/android/server/display/ColorFade.java"
