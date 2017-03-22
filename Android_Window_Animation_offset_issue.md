@@ -1,7 +1,7 @@
 ### Issue - WindowAnimation doesn't make effect on correct position in some cases such as WiFi password setting.
 #
 ###Android 6.x source trace
-####SurfaceInsets was assigned with non-zero value as below.
+###SurfaceInsets was assigned with non-zero value as below.
 
 <pre>
 //frameworks/base/core/java/android/view/ViewRootImpl.java
@@ -13,7 +13,7 @@
                 }  
 </pre>
 
-####WindowsStateAnimator.java gives (left,top) with offset from surfceInsets.
+###WindowsStateAnimator.java gives (left,top) with offset from surfceInsets.
 
 <pre>
 //frameworks/base/services/core/java/com/android/server/wm/WindowManagerService.java :: relayoutWindow()
@@ -31,7 +31,7 @@
             top -= attrs.surfaceInsets.top;
 </pre>
 
-####WindowStateAnimation.java set position to SurfaceControl
+###WindowStateAnimation.java set position to SurfaceControl
 
 <pre>
 //frameworks/base/services/core/java/com/android/server/wm/WindowStateAnimator.java :: createSurfaceLocked()
@@ -45,8 +45,8 @@
                     mSurfaceControl.setPosition(left, top);                                  
 </pre>
 
-####SurfaceControl call nativeSetPosition(), then SurfaceComposerClient.cpp::setPosition is executed
-#### eventually, layer.cpp::SetPosition is executed.
+###SurfaceControl call nativeSetPosition(), then SurfaceComposerClient.cpp::setPosition is executed
+### eventually, layer.cpp::SetPosition is executed.
 
 <pre>
 //frameworks/native/services/surfaceflinger/Layer.cpp
@@ -60,7 +60,7 @@ bool Layer::setPosition(float x, float y) {
 }
 </pre>
 
-#### At this moment, transform in layer is changed. Anything related with transform matrix will be changed.
+### At this moment, transform in layer is changed. Anything related with transform matrix will be changed.
 
 
 
