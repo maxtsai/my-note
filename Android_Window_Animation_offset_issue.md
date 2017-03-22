@@ -2,6 +2,7 @@
 #
 #### Android 6.x source trace
 #### SurfaceInsets was assigned with non-zero value when Z order is not zero (not at the top?).
+#### Surface is not at top as created, Z order is not zero. The possible is the update is not soon enough. Then Layer is created not at top possibly.
 
 <pre>
 //frameworks/base/core/java/android/view/ViewRootImpl.java
