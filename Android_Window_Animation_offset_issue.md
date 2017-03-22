@@ -1,7 +1,7 @@
 ### Issue - WindowAnimation doesn't make effect on correct position in some cases such as WiFi password setting.
 #
 #### Android 6.x source trace
-#### SurfaceInsets was assigned with non-zero value as below.
+#### SurfaceInsets was assigned with non-zero value when Z order is not zero (not at the top?).
 
 <pre>
 //frameworks/base/core/java/android/view/ViewRootImpl.java
