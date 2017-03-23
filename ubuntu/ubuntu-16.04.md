@@ -14,3 +14,10 @@ sudo update-alternatives --config jar
 sudo update-alternatives --config javadoc
 sudo update-alternatives --config javap
 </pre>
+
+Or change java setting by update-java-alternatives
+
+<pre>
+sudo update-java-alternatives -l
+sudo update-java-alternatives -s java-1.7.0-openjdk-amd64
+</pre>
