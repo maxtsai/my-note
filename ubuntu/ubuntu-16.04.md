@@ -46,3 +46,11 @@ index b84154b..8cf41c0 100644
  
  # Clang on the target. Target builds use GCC by default.
 </pre>
+
+
+#### Disable media automount
+
+<pre>
+sudo apt-get install dconf-editor
+org.gnome.desktop.media-handling/automount
+</pre>
